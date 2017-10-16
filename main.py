@@ -67,6 +67,8 @@ smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
