@@ -9,21 +9,22 @@ visitedRooms = []
 
 # ********************************* SET UP THE ROOMS *********************************
 
-# Kitchen
+# Shop (East Room)
 #
-# Room descriptions should include interactive containers like CABINET, BIN, DESK, SHELF, SHOEBOX that contain/hide other interactive items
-kitchen = Room("Kitchen","A dark and dirty room with flies buzzing around. There are dirty beakers, graduated cylinders, and pipettes in the sink. There is a CUPBOARD above the sink and a CABINET under the sink.")
+# Room descriptions should include interactive containers like CABINET, CARDBOARD BOX, SHOEBOX, and LOCKED CONTAINER
+shop = Room("Shop","A dark crypt, skulls surround you and give you an eerie feeling. Growls echo along the walls, as you search for things. There is a CABINET above a dirty sink, A CARDBOARD BOX in the corner, and A SHOEBOX under the sink.")
 
-# The kitchen has a CUPBOARD object that contains/hides 3 interactive items, a sponge, a plate, a can of soup
+# The Shop has a CABINET object that contains/hides 2 interactive items: a fork and a health potion
 # Once this container is open, the interactive items will no longer be hidden in the container
-kitchen.cupboard = Container("cupboard above the sink",["sponge","plate","can of bOPW soup"])
-# The kitchen has a CABINET object that contains/hides 2 interactive items, a knife and a twinkie
+shop.cabinet = Container("cabinet above the sink",["a fork","health potion"])
+# The Shop has a CARDBOARD BOX object that contains/hides 1 interactive item, a bitten cookie
 # Once this container is open, the interactive items will no longer be hidden in the container
-kitchen.cabinet = Container("cabinet under the sink",["knife","twinkie"])
-
+shop.cardboardbox = Container("a cardboard box in the corner",["cookie"])
+# The Shop has a SHOEBOX object that contains/hides 2 interactive items: a kinfe and soap
+# Once this container is open, the interactive items will no longer be hidden in the container
+shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
-kitchen.create_room_item("spoon")
-kitchen.create_room_item("rat")
+shop.create_room_item("rat")
 
 # Small Office
 #
@@ -55,19 +56,19 @@ armory.create_room_item("gun")
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-kitchen.link_room(locked, "EAST")
-kitchen.link_room(smalloffice, "SOUTH")
-kitchen.link_room(locked, "WEST")
-kitchen.link_room(armory, "NORTH")
+shop.link_room(locked, "EAST")
+shop.link_room(smalloffice, "SOUTH")
+shop.link_room(locked, "WEST")
+shop.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
-smalloffice.link_room(kitchen, "NORTH")
+smalloffice.link_room(shop, "NORTH")
 smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-current_room = kitchen
-armory.link_room(kitchen, "SOUTH")
+current_room = shop
+armory.link_room(shop, "SOUTH")
 
 
 # Set up characters
@@ -135,15 +136,15 @@ def checkUserInput(current_room,command,heldItems):
     
     # ********************************* ROOM SPECIFIC USER INPUTS *********************************
     # Interactive containers look like this...   elif current_room.name == "Laboratory" and command == "SHELF"
-    elif current_room.name == "Kitchen" and command == "CUPBOARD":
+    elif current_room.name == "Shop" and command == "CABINET":
         # Open kitchen.cupboard and concat each of the contents to the end of room_items
         current_room.room_items += kitchen.cupboard.open()
     # Can only open cabinet if holding a flashlight that isOn
-    elif current_room.name == "Kitchen" and command == "CABINET" and (("red flashlight" in heldItems and redFlashlight.isOn) or ("yellow flashlight" in heldItems and yellowFlashlight.isOn)):
+    elif current_room.name == "Shop" and command == "SHOEBOX" and (("red flashlight" in heldItems and redFlashlight.isOn) or ("yellow flashlight" in heldItems and yellowFlashlight.isOn)):
         # Open kitchen.cabinet and concat each of the contents to the end of room_items
         print("You use the flashlight to look inside the cabinet.")
         current_room.room_items += kitchen.cabinet.open()
-    elif current_room.name == "Kitchen" and command == "CABINET":
+    elif current_room.name == "Shop" and command == "CARDBOARD BOX":
         print("You check the cabinet, but it's too dark to see if there is anything inside.")
     elif current_room.name == "Small Office" and command == "PACKAGE":
         # Open smalloffice.desk and concat each of the contents to the end of room_items
