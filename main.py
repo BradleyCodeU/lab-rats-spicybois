@@ -138,12 +138,12 @@ def checkUserInput(current_room,command,heldItems):
     # Interactive containers look like this...   elif current_room.name == "Laboratory" and command == "SHELF"
     elif current_room.name == "Shop" and command == "CABINET":
         # Open kitchen.cupboard and concat each of the contents to the end of room_items
-        current_room.room_items += kitchen.cupboard.open()
+        current_room.room_items += shop.cabinet.open()
     # Can only open cabinet if holding a flashlight that isOn
     elif current_room.name == "Shop" and command == "SHOEBOX" and (("red flashlight" in heldItems and redFlashlight.isOn) or ("yellow flashlight" in heldItems and yellowFlashlight.isOn)):
         # Open kitchen.cabinet and concat each of the contents to the end of room_items
         print("You use the flashlight to look inside the cabinet.")
-        current_room.room_items += kitchen.cabinet.open()
+        current_room.room_items += shop.shoebox.open()
     elif current_room.name == "Shop" and command == "CARDBOARD BOX":
         print("You check the cabinet, but it's too dark to see if there is anything inside.")
     elif current_room.name == "Small Office" and command == "PACKAGE":
