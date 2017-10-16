@@ -45,6 +45,11 @@ yellowFlashlight = Flashlight("yellow",1,True)
 #
 supplycloset = Room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
 
+#Armory Room
+#
+armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+armory.create_room_item("gun")
+
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -53,6 +58,7 @@ locked = Room("locked","")
 kitchen.link_room(locked, "EAST")
 kitchen.link_room(smalloffice, "SOUTH")
 kitchen.link_room(locked, "WEST")
+kitchen.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(kitchen, "NORTH")
 smalloffice.link_room(lab, "EAST")
@@ -61,6 +67,8 @@ smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
