@@ -50,7 +50,11 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+<<<<<<< HEAD
 Pistol = Pistol(New, Pistol, 0)
+=======
+armory.create_room_item("gun")
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
 
 #Ammo
 #
@@ -67,7 +71,6 @@ fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
 shop.link_room(ammo, "WEST")
@@ -84,13 +87,23 @@ armory.link_room(shop, "SOUTH")
 current_room = shop
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
+current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+ammo.link_room(kitchen, "EAST")
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+current_room = shop
+armory.link_room(shop, "SOUTH")
 ammo.link_room(shop, "EAST")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
