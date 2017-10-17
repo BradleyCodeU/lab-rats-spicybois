@@ -51,6 +51,11 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
 armory.create_room_item("gun")
 
+#Fitness Room
+#
+fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked.")
+fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
+
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -67,8 +72,16 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
+<<<<<<< HEAD
+current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+
+=======
 current_room = shop
 armory.link_room(shop, "SOUTH")
+>>>>>>> 81bc9dad906cf8e51a188707f1383086875d9093
 
 
 # Set up characters
@@ -160,6 +173,8 @@ def checkUserInput(current_room,command,heldItems):
     elif current_room.name == "Laboratory" and command == "SHELF":
         # Open lab.shelf and concat each of the contents to the end of room_items
         current_room.room_items += lab.shelf.open()
+    elif current_room.name == "Fitness Room" and command == "LOCKER":
+        current_room.room_items += fitnessroom.locker.open()
 
     # ********************************* MOVE *********************************
     else:
