@@ -50,6 +50,11 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
 armory.create_room_item("gun")
 
+#Ammo
+#
+ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
+ammo.create_room_item("Bullets")
+       
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -57,7 +62,7 @@ locked = Room("locked","")
 # Connect rooms. These are one-way connections.
 kitchen.link_room(locked, "EAST")
 kitchen.link_room(smalloffice, "SOUTH")
-kitchen.link_room(locked, "WEST")
+kitchen.link_room(ammo, "WEST")
 kitchen.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(kitchen, "NORTH")
@@ -68,6 +73,7 @@ lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 current_room = kitchen
 armory.link_room(kitchen, "SOUTH")
+ammo.link_room(kitchen, "EAST")
 
 
 # Set up characters
