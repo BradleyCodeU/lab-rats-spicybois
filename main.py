@@ -2,6 +2,7 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+from gun import Gun
 
 heldItems = []
 myHealth = 53
@@ -49,14 +50,8 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
-armory.create_room_item("gun")
+Pistol = Pistol(New, Pistol, 0)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
@@ -67,11 +62,6 @@ ammo.create_room_item("bullets")
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked.")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 
-<<<<<<< HEAD
-=======
->>>>>>> 47c036e70d1823394c9adee91b72580f5546e509
->>>>>>> 0ba9486765136662b5430eadae5acaf9158ad26f
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -91,27 +81,15 @@ lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
-=======
-<<<<<<< HEAD
 current_room = shop
-armory.link_room(shop, "SOUTH")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 ammo.link_room(shop, "EAST")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
-
-
 current_room = shop
 armory.link_room(shop, "SOUTH")
-<<<<<<< HEAD
 
-=======
->>>>>>> 81bc9dad906cf8e51a188707f1383086875d9093
->>>>>>> 47c036e70d1823394c9adee91b72580f5546e509
->>>>>>> a84afbaae686bdc687eec3a476d3b3398deedddc
->>>>>>> 0ba9486765136662b5430eadae5acaf9158ad26f
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
 
 
 # Set up characters
