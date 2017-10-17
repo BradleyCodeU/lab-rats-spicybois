@@ -72,16 +72,10 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-<<<<<<< HEAD
-current_room = kitchen
-armory.link_room(kitchen, "SOUTH")
-lab.link_room(fitnessroom,"EAST")
-fitnessroom.link_room(lab,"WEST")
-
-=======
 current_room = shop
 armory.link_room(shop, "SOUTH")
->>>>>>> 81bc9dad906cf8e51a188707f1383086875d9093
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
 
 
 # Set up characters
