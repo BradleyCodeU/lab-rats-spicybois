@@ -51,47 +51,21 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
 armory.create_room_item("gun")
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
->>>>>>> 11ff17074af2ca6a6b50adb7d611eb6543c31f1c
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
        
-<<<<<<< HEAD
-
-=======
->>>>>>> 11ff17074af2ca6a6b50adb7d611eb6543c31f1c
 #Fitness Room
 #
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked.")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 47c036e70d1823394c9adee91b72580f5546e509
->>>>>>> 0ba9486765136662b5430eadae5acaf9158ad26f
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
->>>>>>> 11ff17074af2ca6a6b50adb7d611eb6543c31f1c
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 11ff17074af2ca6a6b50adb7d611eb6543c31f1c
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
 shop.link_room(ammo, "WEST")
@@ -109,7 +83,6 @@ current_room = shop
 armory.link_room(shop, "SOUTH")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
-<<<<<<< HEAD
 current_room = kitchen
 armory.link_room(kitchen, "SOUTH")
 ammo.link_room(kitchen, "EAST")
@@ -117,24 +90,11 @@ lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
-=======
 ammo.link_room(shop, "EAST")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
-
-
 current_room = shop
 armory.link_room(shop, "SOUTH")
-<<<<<<< HEAD
-
-=======
->>>>>>> 81bc9dad906cf8e51a188707f1383086875d9093
->>>>>>> 47c036e70d1823394c9adee91b72580f5546e509
->>>>>>> a84afbaae686bdc687eec3a476d3b3398deedddc
->>>>>>> 0ba9486765136662b5430eadae5acaf9158ad26f
->>>>>>> 849ee1291f64e53508abef09d7859a36b41e54d1
->>>>>>> 11ff17074af2ca6a6b50adb7d611eb6543c31f1c
-
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
