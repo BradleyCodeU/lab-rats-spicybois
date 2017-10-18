@@ -2,7 +2,11 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+<<<<<<< HEAD
+from weight_machine import Weight
+=======
 from gun import Gun
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
 
 heldItems = []
 myHealth = 53
@@ -50,26 +54,59 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+<<<<<<< HEAD
 newGun = Gun("New","Pistol",0)
+=======
+<<<<<<< HEAD
+armory.create_room_item("gun")
+
+=======
+<<<<<<< HEAD
+Pistol = Pistol(New, Pistol, 0)
+=======
+armory.create_room_item("gun")
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
 
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
        
+<<<<<<< HEAD
+
+=======
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
 #Fitness Room
 #
-fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked.")
+fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
+squatrack = Weight()
 
+
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-shop.link_room(locked, "EAST")
+<<<<<<< HEAD
+shop.link_room(shop, "EAST")
 shop.link_room(smalloffice, "SOUTH")
 shop.link_room(ammo, "WEST")
+=======
+shop.link_room(locked, "EAST")
+shop.link_room(smalloffice, "SOUTH")
+<<<<<<< HEAD
+shop.link_room(fitnessroom, "WEST")
+=======
+shop.link_room(ammo, "WEST")
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
 shop.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(shop, "NORTH")
@@ -77,11 +114,53 @@ smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
+<<<<<<< HEAD
+=======
+lab.link_room(smalloffice, "WEST")
+<<<<<<< HEAD
+
+current_room = shop
+armory.link_room(shop, "SOUTH")
+
+
+=======
+<<<<<<< HEAD
+armory.link_room(shop, "SOUTH")
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
+current_room = shop
+armory.link_room(shop, "SOUTH")
+fitnessroom.link_room(shop, "EAST")
+=======
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
 current_room = shop
 armory.link_room(shop, "SOUTH")
 current_room = shop
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
+<<<<<<< HEAD
+
+
+current_room = shop
+armory.link_room(shop, "SOUTH")
+
+ammo.link_room(shop, "EAST")
+
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+<<<<<<< HEAD
+=======
+
+current_room = shop
+armory.link_room(shop, "SOUTH")
+ 
+ 
+=======
+current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+ammo.link_room(kitchen, "EAST")
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
 current_room = shop
 armory.link_room(shop, "SOUTH")
 ammo.link_room(shop, "EAST")
@@ -89,6 +168,16 @@ lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
+
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
+
+=======
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")

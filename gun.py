@@ -4,7 +4,6 @@ class Gun():
         self.model = model
         self.ammo = 0
 
-
     def get_interface(self,heldItems,current_room):
         if ammo == 0 and "BULLETS" in heldItems:
             print("You can LOAD BULLETS TO "+self.model())
