@@ -2,6 +2,7 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+from weight_machine import Weight
 
 heldItems = []
 myHealth = 53
@@ -53,8 +54,10 @@ armory.create_room_item("gun")
 
 #Fitness Room
 #
-fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked.")
+fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
+squatrack = Weight()
+
 
 # Create a fake room called locked that represents all permenently locked doors
 #
@@ -63,7 +66,7 @@ locked = Room("locked","")
 # Connect rooms. These are one-way connections.
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
-shop.link_room(locked, "WEST")
+shop.link_room(fitnessroom, "WEST")
 shop.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(shop, "NORTH")
@@ -72,16 +75,10 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-<<<<<<< HEAD
-current_room = kitchen
-armory.link_room(kitchen, "SOUTH")
-lab.link_room(fitnessroom,"EAST")
-fitnessroom.link_room(lab,"WEST")
-
-=======
+armory.link_room(shop, "SOUTH")
 current_room = shop
 armory.link_room(shop, "SOUTH")
->>>>>>> 81bc9dad906cf8e51a188707f1383086875d9093
+fitnessroom.link_room(shop, "EAST")
 
 
 # Set up characters
