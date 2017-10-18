@@ -65,57 +65,38 @@ ammo.create_room_item("bullets")
 #
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
-squatrack = Weight("Holds bar in a position used to initiate a squat, an exercise used to improve core strength.", 50)
+squatrack = Weight("Squat Rack","Holds bar in a position used to initiate a squat, an exercise used to improve core strength.", 50)
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
+
+
+
+
+
 # Connect rooms. These are one-way connections.
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
-shop.link_room(fitnessroom, "WEST")
-shop.link_room(armory, "NORTH")
-armory.link_room(shop, "SOUTH")
-current_room = shop
-armory.link_room(shop, "SOUTH")
-fitnessroom.link_room(shop, "EAST")
-shop.link_room(shop, "EAST")
-shop.link_room(ammo, "WEST")
- 
-shop.link_room(locked, "EAST")
-shop.link_room(smalloffice, "SOUTH")
- 
-shop.link_room(fitnessroom, "WEST")
- 
-shop.link_room(ammo, "WEST")
- 
+shop.link_room(fitnessroom, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
+shop.link_room(ammo, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
 shop.link_room(armory, "NORTH")
 
-current_room = shop
-armory.link_room(shop, "SOUTH")
+armory.link_room(shop, "SOUTH") # ????? Which is west of shop? Fitnessroom or ammo?????
 
-
- 
-armory.link_room(shop, "SOUTH")
-armory.link_room(shop, "SOUTH")
 fitnessroom.link_room(shop, "EAST")
- 
- 
-current_room = shop
-armory.link_room(shop, "SOUTH")
-current_room = shop
-lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
- 
-
-
-armory.link_room(shop, "SOUTH")
-
-ammo.link_room(shop, "EAST")
 
 lab.link_room(fitnessroom,"EAST")
-fitnessroom.link_room(lab,"WEST")
- 
+
+ammo.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
+
+current_room = shop
+
+
+
+
+
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")

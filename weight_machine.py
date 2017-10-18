@@ -1,9 +1,9 @@
-class Weight(machine_name,machine_description, weight):
-    def _init_(self, machine_name, machine_description, weight):
+class Weight():
+    def __init__(self, machine_name, machine_description, weight):
         self.machine_name = machine_name
         self.machine_description = machine_description
         self.weight = weight
-        HP_per_rep = 10
+        self.HP_per_rep = 10
 
     def get_weight(self,weight):
         return self.weight
