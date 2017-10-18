@@ -57,14 +57,6 @@ armory = Room("Armory Room","A dark open room that has a stinky stench. A glimme
  
 newGun = Gun("New","Pistol",0)
  
-armory.create_room_item("gun")
-
- 
-Pistol = Pistol(New, Pistol, 0)
- 
-armory.create_room_item("gun")
- 
-
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
@@ -137,21 +129,7 @@ fitnessroom.link_room(lab,"WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
  
-current_room = kitchen
-armory.link_room(kitchen, "SOUTH")
-ammo.link_room(kitchen, "EAST")
-lab.link_room(fitnessroom,"EAST")
-fitnessroom.link_room(lab,"WEST")
  
-current_room = shop
-armory.link_room(shop, "SOUTH")
-ammo.link_room(shop, "EAST")
-lab.link_room(fitnessroom,"EAST")
-fitnessroom.link_room(lab,"WEST")
-current_room = shop
-armory.link_room(shop, "SOUTH")
- 
-
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
