@@ -2,8 +2,7 @@ class Gun():
     def __init__(self,condition,model,ammo):
         self.conditon = condition
         self.model = model
-        self.ammo = amount
-
+        self.ammo = 0
 
     def get_interface(self,heldItems,current_room):
         if ammo == 0 and "BULLETS" in heldItems:
