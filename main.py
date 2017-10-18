@@ -4,7 +4,7 @@ from character import Enemy
 from container import Container
 
 heldItems = []
-myHealth = 53
+myHealth = 50
 visitedRooms = []
 
 # ********************************* SET UP THE ROOMS *********************************
@@ -70,22 +70,11 @@ shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
 shop.link_room(ammo, "WEST")
 shop.link_room(armory, "NORTH")
-supplycloset.link_room(smalloffice, "EAST")
-smalloffice.link_room(shop, "NORTH")
-smalloffice.link_room(lab, "EAST")
-smalloffice.link_room(locked, "SOUTH")
-smalloffice.link_room(supplycloset, "WEST")
-lab.link_room(locked, "SOUTH")
-lab.link_room(smalloffice, "WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
 current_room = shop
 armory.link_room(shop, "SOUTH")
-lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
-current_room = kitchen
-armory.link_room(kitchen, "SOUTH")
-ammo.link_room(kitchen, "EAST")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 current_room = shop
