@@ -54,14 +54,27 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+newGun = Gun("New","Pistol",0)
+=======
+<<<<<<< HEAD
+>>>>>>> 4bdbe915ef7bea391073f88661d6bb990a2bd6ec
 armory.create_room_item("gun")
 
  
 Pistol = Pistol(New, Pistol, 0)
  
 armory.create_room_item("gun")
+<<<<<<< HEAD
  
+=======
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
+>>>>>>> 4bdbe915ef7bea391073f88661d6bb990a2bd6ec
 
 #Ammo
 #
@@ -100,6 +113,8 @@ smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
+<<<<<<< HEAD
+=======
 lab.link_room(smalloffice, "WEST")
  
 
@@ -109,6 +124,7 @@ armory.link_room(shop, "SOUTH")
 
  
 armory.link_room(shop, "SOUTH")
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
 current_room = shop
 armory.link_room(shop, "SOUTH")
 fitnessroom.link_room(shop, "EAST")
@@ -129,6 +145,8 @@ ammo.link_room(shop, "EAST")
 
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
+<<<<<<< HEAD
+=======
 
 current_room = shop
 armory.link_room(shop, "SOUTH")
@@ -138,6 +156,7 @@ armory.link_room(kitchen, "SOUTH")
 ammo.link_room(kitchen, "EAST")
 lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
 current_room = shop
 armory.link_room(shop, "SOUTH")
 ammo.link_room(shop, "EAST")
@@ -145,7 +164,20 @@ lab.link_room(fitnessroom,"EAST")
 fitnessroom.link_room(lab,"WEST")
 current_room = shop
 armory.link_room(shop, "SOUTH")
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
+
+>>>>>>> 37dfa627ade96edc68fb6ed2b862d4f24de4940f
+
+=======
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
+>>>>>>> 353936599a76f28824f479130daa4c7a93ab6e0a
+>>>>>>> 4bdbe915ef7bea391073f88661d6bb990a2bd6ec
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
