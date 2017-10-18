@@ -5,13 +5,20 @@ class HealthPotion():
         self.contain = contain
         self.category = category
     #Sets what kind of potion it is
-    def get_interface(self, heldItems, current_room):
-        if self.contain > 50:
+    def get_potion_type(self):
+        if self.category > 50:
             print("Congrats! You found a large potion! This heals for 50 health.")
-        elif self.contain < 50:
+        elif self.category < 50:
             print("A small potion heals for 25 helath.")
-        else self.contain == 0:
-            print("Not your lucky day... there is no health potion :(")
+        else self.category == 0:
+            print("Not your lucky day... there is no health potion...")
+
+    #Sets the amount of the potion inside
+    def get_amount(self):
+        
+        
+        
+        
             
             
         

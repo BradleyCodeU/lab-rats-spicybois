@@ -2,11 +2,19 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+<<<<<<< HEAD
 from weight_machine import Weight
 from gun import Gun
+=======
+ 
+from weight_machine import Weight
+ 
+from gun import Gun
+ 
+>>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 
 heldItems = []
-myHealth = 53
+myHealth = 50
 visitedRooms = []
 
 # ********************************* SET UP THE ROOMS *********************************
@@ -51,25 +59,42 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 newGun = Gun("New","Pistol",0)
 
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 #Fitness Room
 #
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 squatrack = Weight()
 
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
