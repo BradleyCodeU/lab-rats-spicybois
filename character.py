@@ -4,7 +4,7 @@ from random import *
 class Character():
 
     # Create a character
-    def __init__(self, char_name, char_description):
+    def __init__(self, char_name):
         self.name = char_name
         self.description = char_description
         self.speech = None
