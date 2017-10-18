@@ -3,18 +3,8 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from weight_machine import Weight
-<<<<<<< HEAD
-from gun import Gun
-=======
-from gun import Gun
-=======
- 
-from weight_machine import Weight
- 
 from gun import Gun
  
->>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
->>>>>>> 0a8f3017f74368652774a776a94c1804cd0b0a3c
 
 heldItems = []
 myHealth = 50
@@ -62,65 +52,71 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
-<<<<<<< HEAD
-armory.create_room_item("gun")
-=======
-<<<<<<< HEAD
-=======
- 
->>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
-newGun = Gun("New","Pistol",0)
->>>>>>> 0a8f3017f74368652774a776a94c1804cd0b0a3c
 
+ 
+
+newGun = Gun("New","Pistol",0)
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
-<<<<<<< HEAD
-
-=======
        
->>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 #Fitness Room
 #
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 squatrack = Weight("Holds bar in a position used to initiate a squat, an exercise used to improve core strength.", 50)
-
-<<<<<<< HEAD
-=======
-
- 
->>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-<<<<<<< HEAD
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
 shop.link_room(fitnessroom, "WEST")
 shop.link_room(armory, "NORTH")
-supplycloset.link_room(smalloffice, "EAST")
-smalloffice.link_room(shop, "NORTH")
-smalloffice.link_room(lab, "EAST")
-smalloffice.link_room(locked, "SOUTH")
-smalloffice.link_room(supplycloset, "WEST")
-lab.link_room(locked, "SOUTH")
-lab.link_room(smalloffice, "WEST")
 armory.link_room(shop, "SOUTH")
 current_room = shop
 armory.link_room(shop, "SOUTH")
 fitnessroom.link_room(shop, "EAST")
-current_room = shop
-=======
-<<<<<<< HEAD
+shop.link_room(shop, "EAST")
+shop.link_room(ammo, "WEST")
  
-=======
->>>>>>> 0a8f3017f74368652774a776a94c1804cd0b0a3c
+shop.link_room(locked, "EAST")
+shop.link_room(smalloffice, "SOUTH")
+ 
+shop.link_room(fitnessroom, "WEST")
+ 
+shop.link_room(ammo, "WEST")
+ 
+shop.link_room(armory, "NORTH")
 
->>>>>>> fadcdd4afe2171cff6c53c3f64bd34f8c092434f
+current_room = shop
+armory.link_room(shop, "SOUTH")
+
+
+ 
+armory.link_room(shop, "SOUTH")
+armory.link_room(shop, "SOUTH")
+fitnessroom.link_room(shop, "EAST")
+ 
+ 
+current_room = shop
+armory.link_room(shop, "SOUTH")
+current_room = shop
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+ 
+
+
+armory.link_room(shop, "SOUTH")
+
+ammo.link_room(shop, "EAST")
+
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+ 
+
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
