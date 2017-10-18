@@ -2,7 +2,11 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+<<<<<<< HEAD
 from weight_machine import Weight
+=======
+from gun import Gun
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
 
 heldItems = []
 myHealth = 53
@@ -50,8 +54,17 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+<<<<<<< HEAD
+Pistol = Pistol(New, Pistol, 0)
+=======
 armory.create_room_item("gun")
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
 
+#Ammo
+#
+ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
+ammo.create_room_item("bullets")
+       
 #Fitness Room
 #
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
@@ -66,7 +79,11 @@ locked = Room("locked","")
 # Connect rooms. These are one-way connections.
 shop.link_room(locked, "EAST")
 shop.link_room(smalloffice, "SOUTH")
+<<<<<<< HEAD
 shop.link_room(fitnessroom, "WEST")
+=======
+shop.link_room(ammo, "WEST")
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
 shop.link_room(armory, "NORTH")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(shop, "NORTH")
@@ -75,11 +92,35 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
+<<<<<<< HEAD
 armory.link_room(shop, "SOUTH")
 current_room = shop
 armory.link_room(shop, "SOUTH")
 fitnessroom.link_room(shop, "EAST")
+=======
+current_room = shop
+armory.link_room(shop, "SOUTH")
+current_room = shop
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+current_room = kitchen
+armory.link_room(kitchen, "SOUTH")
+ammo.link_room(kitchen, "EAST")
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+current_room = shop
+armory.link_room(shop, "SOUTH")
+ammo.link_room(shop, "EAST")
+lab.link_room(fitnessroom,"EAST")
+fitnessroom.link_room(lab,"WEST")
+current_room = shop
+armory.link_room(shop, "SOUTH")
+<<<<<<< HEAD
+>>>>>>> fa47d7fbe8a0ebeb8c762918d5f55998367b6579
 
+
+=======
+>>>>>>> cec5ea543210084ec8aa551fafb3356db0ca005a
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
@@ -150,12 +191,12 @@ def checkUserInput(current_room,command,heldItems):
         # Open kitchen.cupboard and concat each of the contents to the end of room_items
         current_room.room_items += shop.cabinet.open()
     # Can only open cabinet if holding a flashlight that isOn
-    elif current_room.name == "Shop" and command == "SHOEBOX" and (("red flashlight" in heldItems and redFlashlight.isOn) or ("yellow flashlight" in heldItems and yellowFlashlight.isOn)):
+    elif current_room.name == "Shop" and command == "SHOEBOX":
         # Open kitchen.cabinet and concat each of the contents to the end of room_items
-        print("You use the flashlight to look inside the cabinet.")
+        print("You check the shoebox and find a KNIFE and a SOAP")
         current_room.room_items += shop.shoebox.open()
     elif current_room.name == "Shop" and command == "CARDBOARD BOX":
-        print("You check the cabinet, but it's too dark to see if there is anything inside.")
+        print("You check the cardboard box, but it's too dark to see if there is anything inside.")
     elif current_room.name == "Small Office" and command == "PACKAGE":
         # Open smalloffice.desk and concat each of the contents to the end of room_items
         current_room.room_items += smalloffice.package.open()
@@ -170,8 +211,6 @@ def checkUserInput(current_room,command,heldItems):
     elif current_room.name == "Laboratory" and command == "SHELF":
         # Open lab.shelf and concat each of the contents to the end of room_items
         current_room.room_items += lab.shelf.open()
-    elif current_room.name == "Fitness Room" and command == "LOCKER":
-        current_room.room_items += fitnessroom.locker.open()
 
     # ********************************* MOVE *********************************
     else:
