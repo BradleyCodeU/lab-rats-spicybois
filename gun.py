@@ -13,3 +13,4 @@ class Gun():
     def check_input(self,command,heldItems,current_room):
         if command == "LOAD BULLETS TO "+self.model() and self.ammo == 0 and "bullets" in heldItems:
             self.add_bullets(heldItems)
+        if 

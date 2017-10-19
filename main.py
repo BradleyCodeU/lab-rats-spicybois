@@ -10,9 +10,9 @@ heldItems = []
 myHealth = 50
 visitedRooms = []
 
-# ********************************* SET UP THE ROOMS *********************************
+# ********************************* SET UP THE ROOMS ******************************************** #
 
-# Shop (East Room)
+# Shop 
 #
 # Room descriptions should include interactive containers like CABINET, CARDBOARD BOX, SHOEBOX, and LOCKED CONTAINER
 shop = Room("Shop","A dark crypt, skulls surround you and give you an eerie feeling. Growls echo along the walls, as you search for things. There is a CABINET above a dirty sink, A CARDBOARD BOX in the corner, and A SHOEBOX under the sink.")
@@ -29,6 +29,7 @@ shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
 shop.create_room_item("rat")
 
+<<<<<<< HEAD
 # Small Office
 #
 smalloffice = Room("Small Office","A dark room with a mess of books and papers covering the desk. There is some mail and an ozon.ru PACKAGE. You can READ a book. You can look in the DESK.")
@@ -54,7 +55,14 @@ supplycloset.create_room_item("gas")
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
 
+=======
+#Armory Room
+#
+armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+armory.create_room_item("gun")
+>>>>>>> 3c0a64da4680ab098e58ab35f62131236ff40e1c
 newGun = Gun("New","Pistol",0)
+
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
@@ -66,21 +74,22 @@ ammo.create_room_item("bullets")
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 squatrack = Weight("Squat Rack","Holds bar in a position used to initiate a squat, an exercise used to improve core strength.", 50)
+
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
-
-
-
-
-
 # Connect rooms. These are one-way connections.
-shop.link_room(locked, "EAST")
-shop.link_room(smalloffice, "SOUTH")
-shop.link_room(fitnessroom, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
-shop.link_room(ammo, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
+shop.link_room(locked, "SOUTH")
+# How fitness is connected
+shop.link_room(fitnessroom, "WEST")
+fitnessroom.link_room(shop, "EAST")
+# How ammo is connected
+shop.link_room(ammo, "EAST")
+ammo.link_room(shop, "WEST")
+#How armory is connected
 shop.link_room(armory, "NORTH")
+<<<<<<< HEAD
 shop.link_room(supplycloset, "SOUTH")
 
 armory.link_room(shop, "SOUTH") 
@@ -92,12 +101,11 @@ lab.link_room(fitnessroom,"EAST")
 
 ammo.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
 
+=======
+armory.link_room(shop, "SOUTH")  
+#Shop is the current room
+>>>>>>> 3c0a64da4680ab098e58ab35f62131236ff40e1c
 current_room = shop
-
-
-
-
-
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
@@ -125,6 +133,8 @@ def playerItems():
         redFlashlight.get_interface(heldItems,current_room)
     if "yellow flashlight" in heldItems:
         yellowFlashlight.get_interface(heldItems,current_room)
+    if "gun" in heldItems:
+        newGun.get_interface(heldItems,current_room)
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
@@ -139,6 +149,8 @@ def checkUserInput(current_room,command,heldItems):
         redFlashlight.check_input(command,heldItems,current_room)
     elif "yellow flashlight" in heldItems and "YELLOW FLASHLIGHT" in command:
         yellowFlashlight.check_input(command,heldItems,current_room)
+    if "gun" in heldItems and "LOAD BULLETS TO " in command:
+        newGun.check_input(command,heldItems,current_room)
 
     # ********************************* USE, TAKE, DROP *********************************
     # Use an item to fight an enemy
