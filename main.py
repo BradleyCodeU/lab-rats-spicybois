@@ -86,10 +86,6 @@ def playerItems():
             print("You can USE "+heldItems[0].upper()+" to fight "+current_room.character.name+" or USE "+heldItems[1].upper())
     # ********************************* SPECIAL ITEM INTERFACES *********************************
     # If holding a special item, then display the item's interface with get_interface()
-    if "red flashlight" in heldItems:
-        redFlashlight.get_interface(heldItems,current_room)
-    if "yellow flashlight" in heldItems:
-        yellowFlashlight.get_interface(heldItems,current_room)
     if "gun" in heldItems:
         newGun.get_interface(heldItems,current_room)
 
@@ -102,10 +98,6 @@ def checkUserInput(current_room,command,heldItems):
     
     # ********************************* SPECIAL USER INPUT *********************************
     # If holding a special item, then check for that item's UI keywords with check_input()
-    if "red flashlight" in heldItems and "RED FLASHLIGHT" in command:
-        redFlashlight.check_input(command,heldItems,current_room)
-    elif "yellow flashlight" in heldItems and "YELLOW FLASHLIGHT" in command:
-        yellowFlashlight.check_input(command,heldItems,current_room)
     if "gun" in heldItems and "LOAD BULLETS TO " in command:
         newGun.check_input(command,heldItems,current_room)
 

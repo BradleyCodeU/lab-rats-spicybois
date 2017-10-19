@@ -9,8 +9,9 @@ class Gun():
             print("You can LOAD BULLETS TO "+self.model())
         elif ammo == 0:
             print("You dont have ammo")
+        if self.ammo > 0:
+            print("You can REMOVE "+self.model()
 
     def check_input(self,command,heldItems,current_room):
         if command == "LOAD BULLETS TO "+self.model() and self.ammo == 0 and "bullets" in heldItems:
             self.add_bullets(heldItems)
-        if 
