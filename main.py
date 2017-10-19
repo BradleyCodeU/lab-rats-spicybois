@@ -10,9 +10,9 @@ heldItems = []
 myHealth = 50
 visitedRooms = []
 
-# ********************************* SET UP THE ROOMS *********************************
+# ********************************* SET UP THE ROOMS ******************************************** #
 
-# Shop (East Room)
+# Shop 
 #
 # Room descriptions should include interactive containers like CABINET, CARDBOARD BOX, SHOEBOX, and LOCKED CONTAINER
 shop = Room("Shop","A dark crypt, skulls surround you and give you an eerie feeling. Growls echo along the walls, as you search for things. There is a CABINET above a dirty sink, A CARDBOARD BOX in the corner, and A SHOEBOX under the sink.")
@@ -28,26 +28,6 @@ shop.cardboardbox = Container("a cardboard box in the corner",["cookie"])
 shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
 shop.create_room_item("rat")
-
-# Small Office
-#
-smalloffice = Room("Small Office","A dark room with a mess of books and papers covering the desk. There is some mail and an ozon.ru PACKAGE. You can READ a book. You can look in the DESK.")
-smalloffice.desk = Container("desk",["battery","envelope"])
-smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porcelain figurine of a bear","red flashlight"])
-smalloffice.create_room_item("guinea pig")
-redFlashlight = Flashlight("red",0,False)
-
-# Laboratory
-#
-lab = Room("Laboratory","A bright room with sunlight shining through windows secured by prison bars. There is a messy SHELF on the north wall.")
-# The lab has a SHELF object that contains 3 interactive items. Shelf gets a third argument because you'd say ON the shelf, not IN the shelf
-lab.shelf = Container("shelf",["brass key","spork","yellow flashlight"],"on")
-lab.create_room_item("rat")
-yellowFlashlight = Flashlight("yellow",1,True)
-
-# Supply Closet
-#
-supplycloset = Room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
 
 #Armory Room
 #
@@ -65,26 +45,23 @@ ammo.create_room_item("bullets")
 fitnessroom = Room("Fitness Room","A small room with sets of weights and cardio equipment fit for a king! In the back, there is a large LOCKER, which appears to be unlocked. There is also a squat rack with a set of WEIGHTS you can LIFT")
 fitnessroom.locker = Container("locker",["fitness magazine", "5 pound dumbell"])
 squatrack = Weight("Squat Rack","Holds bar in a position used to initiate a squat, an exercise used to improve core strength.", 50)
+
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-shop.link_room(locked, "EAST")
-shop.link_room(smalloffice, "SOUTH")
-shop.link_room(fitnessroom, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
-shop.link_room(ammo, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
+shop.link_room(locked, "SOUTH")
+# How fitness is connected
+shop.link_room(fitnessroom, "WEST")
+fitnessroom.link_room(shop, "EAST")
+# How ammo is connected
+shop.link_room(ammo, "EAST")
+ammo.link_room(shop, "WEST")
+#How armory is connected
 shop.link_room(armory, "NORTH")
-
-armory.link_room(shop, "SOUTH") 
-
-fitnessroom.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
-fitnessroom.link_room(lab,"WEST")
-
-lab.link_room(fitnessroom,"EAST")
-
-ammo.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
-
+armory.link_room(shop, "SOUTH")  
+#Shop is the current room
 current_room = shop
 
 # Set up characters
