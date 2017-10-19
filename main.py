@@ -52,10 +52,9 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
-
- 
-
+armory.create_room_item("gun")
 newGun = Gun("New","Pistol",0)
+
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
@@ -69,11 +68,6 @@ squatrack = Weight("Squat Rack","Holds bar in a position used to initiate a squa
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
-
-
-
-
-
 
 # Connect rooms. These are one-way connections.
 shop.link_room(locked, "EAST")
@@ -92,11 +86,6 @@ lab.link_room(fitnessroom,"EAST")
 ammo.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
 
 current_room = shop
-
-
-
-
-
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
@@ -124,6 +113,8 @@ def playerItems():
         redFlashlight.get_interface(heldItems,current_room)
     if "yellow flashlight" in heldItems:
         yellowFlashlight.get_interface(heldItems,current_room)
+    if "gun" in heldItems:
+        newGun.get_interface(heldItems,current_room)
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
@@ -138,6 +129,8 @@ def checkUserInput(current_room,command,heldItems):
         redFlashlight.check_input(command,heldItems,current_room)
     elif "yellow flashlight" in heldItems and "YELLOW FLASHLIGHT" in command:
         yellowFlashlight.check_input(command,heldItems,current_room)
+    if "gun" in heldItems and "LOAD BULLETS TO " in command:
+        newGun.check_input(command,heldItems,current_room)
 
     # ********************************* USE, TAKE, DROP *********************************
     # Use an item to fight an enemy
