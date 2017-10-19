@@ -47,19 +47,19 @@ yellowFlashlight = Flashlight("yellow",1,True)
 
 # Supply Closet
 #
-supplycloset = Room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
+supplycloset = room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
+supplycloset.create_room_item("gas")
 
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
-
- 
 
 newGun = Gun("New","Pistol",0)
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
+
        
 #Fitness Room
 #
@@ -81,6 +81,7 @@ shop.link_room(smalloffice, "SOUTH")
 shop.link_room(fitnessroom, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
 shop.link_room(ammo, "WEST") # ????? Which is west of shop? Fitnessroom or ammo?????
 shop.link_room(armory, "NORTH")
+shop.link_room(supplycloset, "SOUTH")
 
 armory.link_room(shop, "SOUTH") 
 
