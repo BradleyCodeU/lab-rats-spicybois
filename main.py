@@ -29,16 +29,45 @@ shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
 shop.create_room_item("rat")
 
+<<<<<<< HEAD
+# Small Office
+#
+smalloffice = Room("Small Office","A dark room with a mess of books and papers covering the desk. There is some mail and an ozon.ru PACKAGE. You can READ a book. You can look in the DESK.")
+smalloffice.desk = Container("desk",["battery","envelope"])
+smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porcelain figurine of a bear","red flashlight"])
+smalloffice.create_room_item("guinea pig")
+redFlashlight = Flashlight("red",0,False)
+
+# Laboratory
+#
+lab = Room("Laboratory","A bright room with sunlight shining through windows secured by prison bars. There is a messy SHELF on the north wall.")
+# The lab has a SHELF object that contains 3 interactive items. Shelf gets a third argument because you'd say ON the shelf, not IN the shelf
+lab.shelf = Container("shelf",["brass key","spork","yellow flashlight"],"on")
+lab.create_room_item("rat")
+yellowFlashlight = Flashlight("yellow",1,True)
+
+# Supply Closet
+#
+supplycloset = room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
+supplycloset.create_room_item("gas")
+
+#Armory Room
+#
+armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
+
+=======
 #Armory Room
 #
 armory = Room("Armory Room","A dark open room that has a stinky stench. A glimmer catches your eye and you find a PISTOL. you find some other weapons but they are all broken.")
 armory.create_room_item("gun")
+>>>>>>> 3c0a64da4680ab098e58ab35f62131236ff40e1c
 newGun = Gun("New","Pistol",0)
 
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
 ammo.create_room_item("bullets")
+
        
 #Fitness Room
 #
@@ -60,8 +89,22 @@ shop.link_room(ammo, "EAST")
 ammo.link_room(shop, "WEST")
 #How armory is connected
 shop.link_room(armory, "NORTH")
+<<<<<<< HEAD
+shop.link_room(supplycloset, "SOUTH")
+
+armory.link_room(shop, "SOUTH") 
+
+fitnessroom.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
+fitnessroom.link_room(lab,"WEST")
+
+lab.link_room(fitnessroom,"EAST")
+
+ammo.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
+
+=======
 armory.link_room(shop, "SOUTH")  
 #Shop is the current room
+>>>>>>> 3c0a64da4680ab098e58ab35f62131236ff40e1c
 current_room = shop
 
 # Set up characters
