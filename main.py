@@ -84,7 +84,7 @@ shop.link_room(armory, "NORTH")
 
 armory.link_room(shop, "SOUTH") 
 
-fitnessroom.link_room(shop, "EAST")
+fitnessroom.link_room(shop, "EAST") # ????? Which is west of shop? Fitnessroom or ammo?????
 fitnessroom.link_room(lab,"WEST")
 
 lab.link_room(fitnessroom,"EAST")
