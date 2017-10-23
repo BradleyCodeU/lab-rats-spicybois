@@ -74,12 +74,6 @@ armory.link_room(shop, "SOUTH")
 #Shop is the current room
 current_room = shop
 
-# Set up characters
-dmitry = Enemy("Dmitry", "A smelly zombie")
-dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE"])
-supplycloset.set_character(dmitry)
-
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
     # Print out the player's Held Items and let player know if they can USE an item to fight a character or something
@@ -97,7 +91,6 @@ def playerItems():
     # ********************************* SPECIAL ITEM INTERFACES *********************************
     # If holding a special item, then display the item's interface with get_interface()
     if "gun" in heldItems:
-        newGun.get_interface(heldItems,current_room)
         newGun.get_interface(ammo)
 
 # This fuction checks the player's command and then runs the corresponding method
@@ -110,7 +103,6 @@ def checkUserInput(current_room,command,heldItems):
     # ********************************* SPECIAL USER INPUT *********************************
     # If holding a special item, then check for that item's UI keywords with check_input()
     if "gun" in heldItems and "LOAD BULLETS TO " in command:
-        newGun.check_input(command,heldItems,current_room)
         newGun.check_input(command, heldItems)
 
     # ********************************* USE, TAKE, DROP *********************************
