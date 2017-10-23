@@ -98,6 +98,7 @@ def playerItems():
     # If holding a special item, then display the item's interface with get_interface()
     if "gun" in heldItems:
         newGun.get_interface(heldItems,current_room)
+        newGun.get_interface(ammo)
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
@@ -110,6 +111,7 @@ def checkUserInput(current_room,command,heldItems):
     # If holding a special item, then check for that item's UI keywords with check_input()
     if "gun" in heldItems and "LOAD BULLETS TO " in command:
         newGun.check_input(command,heldItems,current_room)
+        newGun.check_input(command, heldItems)
 
     # ********************************* USE, TAKE, DROP *********************************
     # Use an item to fight an enemy
