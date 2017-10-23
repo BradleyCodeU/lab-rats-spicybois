@@ -10,9 +10,9 @@ class HealthPotion():
     def get_potion_type(self):
         if self.category > 50:
             print("Congrats! This heals for 50 health.")
-        elif self.category < 50:
+        elif self.category < 50 and self.category > 0:
             print("This heals for 25 helat+h.")
-        else self.category == 0:
+        else:
             print("Not your lucky day... there is no health potion...")
 
     #Gets the amount of the potion inside
@@ -29,8 +29,8 @@ class HealthPotion():
         if self.category > 50:
             print("BIG POTION")
         elif self.category < 50:
-            print("SMALL POTION)
-        else
+            print("SMALL POTION")
+        else:
             print("NONE HAHAHA")
 
     def set_contained(self):
