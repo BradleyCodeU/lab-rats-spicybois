@@ -2,7 +2,7 @@ from random import *
 
 class HealthPotion():
     #Constructs a name, the amount in the potion, and if it is large or small
-    def __init__(self):
+    def __init__(self, contain, category):
         self.contain = contain
         self.category = category
         
