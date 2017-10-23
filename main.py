@@ -4,6 +4,7 @@ from character import Enemy
 from container import Container
 from weight_machine import Weight
 from gun import Gun
+from healthpotion import HealthPotion
  
 
 heldItems = []
