@@ -5,7 +5,6 @@ from container import Container
 from weight_machine import Weight
 from gun import Gun
 from healthpotion import HealthPotion
- 
 from chainsaw import Chainsaw
 
 heldItems = []
@@ -29,7 +28,8 @@ shop.cardboardbox = Container("a cardboard box in the corner",["cookie"])
 # Once this container is open, the interactive items will no longer be hidden in the container
 shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
-shop.create_room_item("rat")
+newPotion = HealthPotion()
+
 
 #Armory Room
 #
