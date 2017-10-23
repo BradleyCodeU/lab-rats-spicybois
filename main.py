@@ -4,7 +4,9 @@ from character import Enemy
 from container import Container
 from weight_machine import Weight
 from gun import Gun
+from healthpotion import HealthPotion
  
+from chainsaw import Chainsaw
 
 heldItems = []
 myHealth = 50
@@ -35,6 +37,13 @@ armory = Room("Armory Room","A dark open room that has a stinky stench. A glimme
 armory.create_room_item("gun")
 newGun = Gun("New","Pistol",0)
 
+#SupplyCloset
+#
+closet = Room("Supply Closet","A dusty closet with a rusty chainsaw sitting in it. It might still be of good use...")
+closet.creat_room_item("chainsaw")
+newChainsaw = Chainsaw("New",0)
+
+
 #Ammo
 #
 ammo = Room("Ammo Room","A dark room with a shelf in it. There is ammo on the shelf.")
@@ -52,6 +61,7 @@ locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
 shop.link_room(locked, "SOUTH")
+shop.link_room(closet, "SOUTH")
 # How fitness is connected
 shop.link_room(fitnessroom, "WEST")
 fitnessroom.link_room(shop, "EAST")
