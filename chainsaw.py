@@ -1,7 +1,7 @@
 class Chainsaw():
     def __init__(self,condition,model,gas):
         self.conditon = condition
-        self.model = ripper
+        self.model = model
         self.gas = 0
 
     def get_interface(self,heldItems,current_room):

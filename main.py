@@ -28,7 +28,7 @@ shop.cardboardbox = Container("a cardboard box in the corner",["cookie"])
 # Once this container is open, the interactive items will no longer be hidden in the container
 shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
-newPotion = HealthPotion()
+newPotion = HealthPotion(0,0)
 
 
 #Armory Room
@@ -40,8 +40,8 @@ newGun = Gun("New","Pistol",0)
 #SupplyCloset
 #
 closet = Room("Supply Closet","A dusty closet with a rusty chainsaw sitting in it. It might still be of good use...")
-closet.creat_room_item("chainsaw")
-newChainsaw = Chainsaw("New",0)
+closet.create_room_item("chainsaw")
+newChainsaw = Chainsaw("New","Ripper",0)
 
 
 #Ammo
